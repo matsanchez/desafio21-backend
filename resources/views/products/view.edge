@@ -1,0 +1,19 @@
+@layout('layouts/main')
+@section('content')
+<div class="d-flex justify-content-center">
+@each(product in products)
+<div class="card m-1" style="width: 18rem;">
+  <img src={{product.thumbnail}} class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{product.name}}</h5>
+    <p class="card-text">{{product.description}}</p>
+    <a href="#" class="btn btn-primary">{{product.price}}</a>
+    <form action='{{route('product_delete',[product.id])}}?_method=DELETE' method="post">
+      {{ csrfField() }}
+      <button type="submit">ID: {{product.id}}</button>
+    </form>
+  </div>
+</div>
+@endeach
+</div>
+@endsection

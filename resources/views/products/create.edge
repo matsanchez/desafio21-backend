@@ -1,0 +1,25 @@
+@layout('layouts/main')
+@section('content')
+<div class="container mt-4 p-4 bg-dark text-light">
+  <form method="POST" action="/products">
+      {{ csrfField() }}
+  <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+      <input type="text" name="name" class="form-control" id="exampleFormControlInput1">
+    </div>
+  <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Precio</label>
+      <input type="text" name="price" class="form-control" id="exampleFormControlInput1">
+    </div>
+  <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Foto</label>
+      <input type="text" name="thumbnail" class="form-control" id="exampleFormControlInput1">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Breve Descripcion</label>
+      <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <button type="submit">Guardar Producto</button>
+  </form>
+  </div>
+@endsection

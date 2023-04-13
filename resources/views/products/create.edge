@@ -5,19 +5,20 @@
       {{ csrfField() }}
   <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-      <input type="text" name="name" class="form-control" id="exampleFormControlInput1">
+      <input type="text" name="name" class="form-control" id="exampleFormControlInput1" required>
+
     </div>
   <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Precio</label>
-      <input type="text" name="price" class="form-control" id="exampleFormControlInput1">
+      <input type="text" name="price" class="form-control" id="exampleFormControlInput1" required>
     </div>
   <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Foto</label>
-      <input type="text" name="thumbnail" class="form-control" id="exampleFormControlInput1">
+      <input type="text" name="thumbnail" class="form-control" id="exampleFormControlInput1" required>
     </div>
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label">Breve Descripcion</label>
-      <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea class="form-control" name="description" id="exampleFormControlTextarea1" required rows="3"></textarea>
     </div>
     <button type="submit">Guardar Producto</button>
   </form>

@@ -1,0 +1,11 @@
+@layout('layouts/main')
+@section('content')
+<div class="container d-flex justify-content-center bg-warning mt-5 rounded-3">
+  <div class="w-50 p-3">
+      <h1>NO HAY PRODUCTOS AGREGADOS</h1>
+      <form action="/products/create" method="GET" class="text-center mt-4">
+        <button type="submit">Insertar Productos</button>
+      </form>
+  </div>
+</div>
+@endsection

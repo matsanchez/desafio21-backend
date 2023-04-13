@@ -9,6 +9,9 @@ class ProductController {
 
   async get({ view }) {
     const products = await Product.all();
+    if (products.toJSON().length === 0) {
+      return view.render("products/view_empty");
+    }
     return view.render("products/view", { products: { ...products.toJSON() } });
   }
 

@@ -7,10 +7,10 @@
   <div class="card-body">
     <h5 class="card-title">{{product.name}}</h5>
     <p class="card-text">{{product.description}}</p>
-    <a href="#" class="btn btn-primary">{{product.price}}</a>
-    <form action='{{route('product_delete',[product.id])}}?_method=DELETE' method="post">
+    <p class="card-text">${{product.price}}</p>
+    <form action='/products/{{product.id}}' method="POST">
       {{ csrfField() }}
-      <button type="submit">ID: {{product.id}}</button>
+      <button class="m-1 mb-2 btn btn-sm btn-success" type="submit">Eliminar</button>
     </form>
   </div>
 </div>

@@ -1,5 +1,4 @@
 "use strict";
-
 const Product = use("App/Models/Product");
 
 class ProductController {
@@ -22,13 +21,22 @@ class ProductController {
       product.description = description;
       product.thumbnail = thumbnail;
       await product.save();
+
+      response.redirect("/");
     } catch (error) {
       console.log(error);
     }
   }
 
-  async delete({ params }) {
-    console.log(params);
+  async delete({ params, response }) {
+    try {
+      const { id } = params;
+      const product = await Product.find(id);
+      await product.delete();
+      response.redirect("/");
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
 
